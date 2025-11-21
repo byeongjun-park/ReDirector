@@ -1,0 +1,49 @@
+{% include header.html %}
+
+
+    {% include home-hero.html %}
+
+    <main id="portfolio">
+
+        <div class="row">
+          <div class="col-md-12">
+
+            {% if site.section_title != '' %}
+            <h2 class="section-title text-center">{{ site.section_title }}</h2>
+            {% endif %}
+            {% if site.section_subtitle != '' %}
+            <p class="section-subtitle text-center">{{ site.section_subtitle }}</p>
+            {% endif %}
+
+            <!-- sort posts with priority -->
+            {% assign sorted_posts = paginator.posts | sort: 'priority' %}
+            {% for post in sorted_posts %}
+            <!-- if priority is even and odd, change color -->
+              {% assign priority_number = post.priority | plus: 0 %}
+              {% assign result = priority_number | modulo: 2 %}
+              {% if result != 0 %}
+                <div class="even-priority">
+              {% else %}
+                <div class="odd-priority">
+              {% endif %}
+
+                {% if post.position == "left" %}
+                {% include content-left.html %}
+              {% endif %}
+
+              {% if post.position == "right" %}
+                {% include content-right.html %}
+              {% endif %}
+
+              {% if post.position == "center" %}
+              {% include content-center.html %}
+            {% endif %}
+            {% endfor %}
+
+            <!-- {% include pagination.html %} -->
+            </div>
+          </div>
+      </div>
+    </main>
+
+{% include footer.html %}

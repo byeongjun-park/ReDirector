@@ -1,0 +1,183 @@
+<!doctype html>
+<head>
+
+  <!-- Meta -->
+  <meta charset="utf-8">
+
+  <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% elsif post.title %}{{ post.title }} - {{ site.title }}{% else %}{{ site.title }} {% endif %}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.url }}/atom.xml">
+
+  <!-- Favicons -->
+  <link rel="icon" href="{{ site.url }}/img/favicon.png">
+
+  <!-- Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700|Merriweather:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ "/css/animate.min.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/style.css" | prepend: site.baseurl }}">
+
+  <style>
+    .divider {
+      border-right: 2px dashed #737373;
+      width: 2px;
+    }
+  </style>
+  <style>
+    .divider_horizontal {
+      border-top: 2px dashed #737373;
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+    }
+  </style>
+  <!-- Begin new styles from demos page -->
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    iframe {
+      border-radius: 0.5em;
+      width: 27.5em;
+      height: 27.5em;
+      border: none;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 100%;
+        height: 30em;
+      }
+    }
+
+    a,
+    a:link {
+      color: #777;
+    }
+
+    /* Styles for the instruction icons and text */
+    .instructions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.2em;
+      text-align: center;
+      padding: 0.6em;
+    }
+
+    .instruction-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      font-size: 1.2em;
+    }
+
+    .instruction-item img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .instructions_small {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1em;
+      text-align: center;
+      padding: 0.5em;
+    }
+
+    .instruction-item_small {
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+      font-size: 1.0em;
+    }
+
+    .instruction-item_small img {
+      width: 30px;
+      height: 30px;
+    }
+  </style>
+  <style>
+    /* 캐러셀: 화면 폭에 맞게 100% */
+    .comparison-carousel {
+      max-width: 100%;
+      margin: 20px auto;
+    }
+
+    /* 비디오는 항상 가로 100% */
+    .comparison-carousel .video-slide {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* ex.name: 크게, italic, 하이라이트 */
+    .comparison-carousel .comparison-slide-name {
+      margin-top: 12px;
+      margin-bottom: 12px;
+      text-align: center;
+      font-weight: 500;
+      font-style: italic;
+      font-size: 2em;
+      color: #222;
+    }
+
+    .comparison-carousel .comparison-slide-name span {
+      background-color: #F89C47;  /* 하이라이트 색 */
+      padding: 0.2em 0.4em;
+      border-radius: 0.25em;
+    }
+
+    /* 점 인디케이터: 중앙 + 모두 검정, active는 1.5배 */
+    .comparison-carousel .carousel-indicators {
+      position: static !important;
+      bottom: auto;
+      left: auto;
+      right: auto;
+      width: 100%;
+      margin: 4px 0 0;
+      padding-left: 0;
+      text-align: center;
+    }
+
+    .comparison-carousel .carousel-indicators li {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 3px;
+      border-radius: 50%;
+      background-color: #000;
+      border: 1px solid #000;
+      transition: transform 0.2s ease;
+    }
+
+    .comparison-carousel .carousel-indicators .active {
+      transform: scale(1.5);
+      transform-origin: center center;
+    }
+
+    /* 좌우 버튼이 위에 잘 보이도록 */
+    .comparison-carousel .carousel-control {
+      z-index: 5;
+      background-image: none;
+    }
+  </style>
+</head>
+<body class="{{ post.title | downcase | replace:' ','-' | replace:',','' | strip_html }}{% if page.category %} category-{{ page.category }}{% endif %}{% if page.layout-class %} layout-{{ page.layout-class }}{% endif %}">
+
+<div id="top">
