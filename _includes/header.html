@@ -131,16 +131,10 @@
       margin-top: 12px;
       margin-bottom: 12px;
       text-align: center;
-      font-weight: 500;
+      font-weight: 300;
       font-style: italic;
-      font-size: 2em;
+      font-size: 1.5em;
       color: #222;
-    }
-
-    .comparison-carousel .comparison-slide-name span {
-      background-color: #F89C47;  /* 하이라이트 색 */
-      padding: 0.2em 0.4em;
-      border-radius: 0.25em;
     }
 
     /* 점 인디케이터: 중앙 + 모두 검정, active는 1.5배 */
@@ -175,6 +169,15 @@
     .comparison-carousel .carousel-control {
       z-index: 5;
       background-image: none;
+    }
+    
+    /* 아이콘만 동그랗게 배경색 */
+    .comparison-carousel .carousel-control .glyphicon,
+    .comparison-carousel .carousel-control .icon-prev,
+    .comparison-carousel .carousel-control .icon-next {
+      background-color: rgba(0, 0, 0, 0.5); /* 원하는 색 */
+      border-radius: 50%;                    /* 동그랗게 */
+      padding: 8px;                          /* 원 크기 조절 */
     }
   </style>
 </head>
