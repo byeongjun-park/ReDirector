@@ -12,6 +12,11 @@
     }
   }
 
+  /* 컨테이너를 심볼 absolute 기준으로 사용 */
+  .hero-wrapper {
+    position: relative;
+  }
+
   /* 심볼, 로고는 화면에 맞게 */
   .header-symbol {
     max-width: 120px;
@@ -25,27 +30,28 @@
   }
 </style>
 
-<div class="container">
-  <div class="row align-items-start">
-    <!-- 로고 + 심볼: 맨 위 오른쪽 정렬 -->
-    <div class="col-12 d-flex justify-content-end align-items-start" style="margin-top: 40px;">
-      <img
-        src="{{ site.baseurl }}/img/logo.png"
-        alt="{{ site.name }}"
-        class="logo"
-        style="margin-bottom: 0; margin-right: 8px;"
-      />
-      <embed
-        src="img/simbol.svg"
-        type="image/svg+xml"
-        aria-label="심볼"
-        class="header-symbol"
-      />
-    </div>
+<div class="container hero-wrapper">
+  <!-- 심볼: 컨테이너 기준 오른쪽 위 고정 (필요 없으면 d-none d-md-block 제거) -->
+  <embed
+    src="img/simbol.svg"
+    type="image/svg+xml"
+    aria-label="심볼"
+    class="header-symbol d-none d-md-block"
+    style="position: absolute; top: 40px; right: 0;"
+  />
 
+  <div class="row align-items-start">
     <div class="col-md-12">
       <div class="hero-container">
         <div class="hero-content">
+          <!-- logo: 중앙 정렬 -->
+          <div class="text-center">
+            <img
+              src="{{ site.baseurl }}/img/logo.png"
+              alt="{{ site.name }}"
+              class="logo"
+            />
+          </div>
 
           {% if site.title != '' %}
           <h1 class="text-center hero-title">
