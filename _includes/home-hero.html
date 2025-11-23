@@ -1,14 +1,13 @@
 <div class="container">
 
   <div class="row">
-    <embed
-    src="img/simbol.svg"
-    type="image/svg+xml"
-    aria-label="심볼"
-    style="margin-top: 40px; right: 0; text-align: right; position: absolute"
-    />
-    <div class="col-md-12">
-
+    <div class="col-md-12" style="position: relative;">
+      <div class="hero-symbol">
+        <img
+          src="{{ site.baseurl }}/img/simbol.svg"
+          alt="심볼"
+        />
+      </div>
       <div class="hero-container">
         <div class="hero-content">
           <!-- logo -->
@@ -17,15 +16,11 @@
               src="{{ site.baseurl }}/img/logo.png"
               alt="{{ site.name }}"
               class="logo"
-              style="width: 150px; height: auto; margin-bottom: 10px"
             />
           </div>
 
           {% if site.title != '' %}
-          <h1
-            class="text-center"
-            style="width: 1217px; height: auto; font-size: 40px"
-          >
+          <h1 class="text-center hero-title">
             {{site.title}}
           </h1>
           {% endif %}
