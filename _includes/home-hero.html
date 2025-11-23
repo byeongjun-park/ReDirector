@@ -1,26 +1,14 @@
 <style>
-  /* 제목: 모바일에서는 전체폭, 노트북 이상에서는 조금 넓게 */
+  /* 제목은 폭 고정하지 않고 반응형으로 */
   .hero-title {
-    font-size: 28px;
+    font-size: 32px;
     line-height: 1.2;
     margin: 0 auto 10px;
-    max-width: 100%;      /* 모바일/작은 화면에서 전체 폭 */
-    padding: 0 12px;
-  }
-
-  @media (min-width: 768px) {
-    /* 태블릿~작은 노트북 */
-    .hero-title {
-      font-size: 32px;
-      max-width: 800px;   /* 한 줄 폭 조금 넓게 */
-    }
   }
 
   @media (min-width: 992px) {
-    /* 일반 노트북 이상 */
     .hero-title {
       font-size: 40px;
-      max-width: 1000px;  /* 타이틀 박스를 더 넓게 */
     }
   }
 
@@ -41,21 +29,21 @@
   }
 </style>
 
-<div class="container hero-wrapper">
-  <!-- 심볼: 컨테이너 기준 오른쪽 위 고정 (필요 없으면 d-none d-md-block 제거) -->
-  <embed
-    src="img/simbol.svg"
-    type="image/svg+xml"
-    aria-label="심볼"
-    class="header-symbol d-none d-md-block"
-    style="position: absolute; top: 40px; right: 0;"
-  />
-
+<div class="hero-wrapper">
   <div class="row align-items-start">
+    <!-- 심볼: 오른쪽 위 -->
+    <embed
+      src="img/simbol.svg"
+      type="image/svg+xml"
+      aria-label="심볼"
+      class="header-symbol d-none d-md-block"
+      style="position: absolute; top: 40px; right: 0;"
+    />
+
     <div class="col-md-12">
       <div class="hero-container">
         <div class="hero-content">
-          <!-- logo: 중앙 정렬 -->
+          <!-- logo: 중앙 -->
           <div class="text-center">
             <img
               src="{{ site.baseurl }}/img/logo.png"
