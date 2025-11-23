@@ -4,35 +4,6 @@
     position: relative;
   }
 
-  /* 제목: hero-content 기준으로 폭/폰트 정리 */
-  .hero-content .hero-title {
-    line-height: 1.2;
-    margin: 0 auto 16px;
-    max-width: 1000px;   /* 아래 컨텐츠 폭이랑 비슷하게 */
-    padding: 0 16px;     /* 양쪽 여백 조금 */
-    text-align: center;
-    font-size: 28px;
-  }
-
-  @media (min-width: 768px) {
-    .hero-content .hero-title {
-      font-size: 32px;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .hero-content .hero-title {
-      font-size: 40px;
-      max-width: 1100px;  /* 컨테이너(1200px)보다 살짝만 좁게 */
-    }
-  }
-
-  /* 심볼, 로고는 화면에 맞게 */
-  .header-symbol {
-    max-width: 120px;
-    height: auto;
-  }
-
   .logo {
     width: 150px;
     height: auto;
@@ -98,7 +69,7 @@
             <div class="author-block" style="font-size: 15px">
               <span>(† : Corresponding Authors)</span>
             </div>
-          </div>
+          </div></br>
 
           <div class="hero-buttons">
             <a href="{{site.paper}}">
@@ -123,7 +94,6 @@
               </button>
             </a>
           </div>
-
         </div>
       </div>
     </div>
