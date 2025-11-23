@@ -1,22 +1,33 @@
 <style>
-  /* 제목은 폭 고정하지 않고 반응형으로 */
-  .hero-title {
-    font-size: 32px;
-    line-height: 1.2;
-    margin: 0 auto 10px;
-  }
-
-  @media (min-width: 992px) {
-    .hero-title {
-      font-size: 40px;
-    }
-  }
-
-  /* 심볼, 로고는 화면에 맞게 */
+  /* 전체 헤더 래퍼: 심볼 absolute 기준 */
   .hero-wrapper {
     position: relative;
   }
 
+  /* 제목: hero-content 기준으로 폭/폰트 정리 */
+  .hero-content .hero-title {
+    line-height: 1.2;
+    margin: 0 auto 16px;
+    max-width: 1000px;   /* 아래 컨텐츠 폭이랑 비슷하게 */
+    padding: 0 16px;     /* 양쪽 여백 조금 */
+    text-align: center;
+    font-size: 28px;
+  }
+
+  @media (min-width: 768px) {
+    .hero-content .hero-title {
+      font-size: 32px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .hero-content .hero-title {
+      font-size: 40px;
+      max-width: 1100px;  /* 컨테이너(1200px)보다 살짝만 좁게 */
+    }
+  }
+
+  /* 심볼, 로고는 화면에 맞게 */
   .header-symbol {
     max-width: 120px;
     height: auto;
@@ -28,6 +39,7 @@
     margin-bottom: 10px;
   }
 </style>
+
 
 <div class="hero-wrapper">
   <div class="row align-items-start">
