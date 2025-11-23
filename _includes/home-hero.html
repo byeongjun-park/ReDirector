@@ -27,28 +27,25 @@
 
 <div class="container">
   <div class="row align-items-start">
-    <!-- 심볼: 큰 화면에서만 오른쪽 위에 표시 -->
-    <div class="col-12 text-end d-none d-md-block">
+    <!-- 로고 + 심볼: 맨 위 오른쪽 정렬 -->
+    <div class="col-12 d-flex justify-content-end align-items-start" style="margin-top: 40px;">
+      <img
+        src="{{ site.baseurl }}/img/logo.png"
+        alt="{{ site.name }}"
+        class="logo"
+        style="margin-bottom: 0; margin-right: 8px;"
+      />
       <embed
         src="img/simbol.svg"
         type="image/svg+xml"
         aria-label="심볼"
         class="header-symbol"
-        style="margin-top: 40px"
       />
     </div>
 
     <div class="col-md-12">
       <div class="hero-container">
         <div class="hero-content">
-          <!-- logo -->
-          <div class="text-center">
-            <img
-              src="{{ site.baseurl }}/img/logo.png"
-              alt="{{ site.name }}"
-              class="logo"
-            />
-          </div>
 
           {% if site.title != '' %}
           <h1 class="text-center hero-title">
