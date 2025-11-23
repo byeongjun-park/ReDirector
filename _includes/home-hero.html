@@ -1,23 +1,34 @@
 <style>
-  /* 제목은 폭 고정하지 않고 반응형으로 */
+  /* 제목: 모바일에서는 전체폭, 노트북 이상에서는 조금 넓게 */
   .hero-title {
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1.2;
     margin: 0 auto 10px;
+    max-width: 100%;      /* 모바일/작은 화면에서 전체 폭 */
+    padding: 0 12px;
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
+    /* 태블릿~작은 노트북 */
     .hero-title {
-      font-size: 40px;
+      font-size: 32px;
+      max-width: 800px;   /* 한 줄 폭 조금 넓게 */
     }
   }
 
-  /* 컨테이너를 심볼 absolute 기준으로 사용 */
+  @media (min-width: 992px) {
+    /* 일반 노트북 이상 */
+    .hero-title {
+      font-size: 40px;
+      max-width: 1000px;  /* 타이틀 박스를 더 넓게 */
+    }
+  }
+
+  /* 심볼, 로고는 화면에 맞게 */
   .hero-wrapper {
     position: relative;
   }
 
-  /* 심볼, 로고는 화면에 맞게 */
   .header-symbol {
     max-width: 120px;
     height: auto;
