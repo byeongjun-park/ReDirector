@@ -1,15 +1,42 @@
-<h3>Citation</h3>
-<div class="citation-box">
-  <h4>BibTeX</h4>
-  <pre><code>@inproceedings{videorfsplat2025,
-      title={VideoRFSplat: Direct Scene-Level Text-to-3D Gaussian Splatting Generation with Flexible Pose and Multi-View Joint Modeling},
-      author={Anonymous},
-      booktitle={International Conference on Computer Vision (ICCV)},
-      year={2025}
-    }</code></pre>
+
+<div class="container">
+  <div class="content">
+    {% if post.title %}
+      <h3 class="title">{{ post.title }}</h3>
+    {% endif %}
+    <div
+      id="wrapper"
+      style="
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+      "
+    >
+      <h3>Citation</h3>
+      <div class="citation-box">
+        <h4>BibTeX</h4>
+        <pre><code>@inproceedings{videorfsplat2025,
+            title={VideoRFSplat: Direct Scene-Level Text-to-3D Gaussian Splatting Generation with Flexible Pose and Multi-View Joint Modeling},
+            author={Anonymous},
+            booktitle={International Conference on Computer Vision (ICCV)},
+            year={2025}
+          }</code></pre>
+      </div>
+    </div>
+  </div>
 </div>
 
 <style>
+.citation-section {
+  margin: 3em 0;
+  padding: 2em;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  max-width: 1200px;
+}
+
 .citation-section h3 {
   margin-top: 0;
   margin-bottom: 1.5em;
@@ -20,5 +47,24 @@
   margin-bottom: 0.5em;
   color: #555;
   font-size: 18px;
+}
+
+.citation-box {
+  margin-bottom: 2em;
+}
+
+.citation-box pre {
+  background-color: white;
+  padding: 1.5em;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  overflow-x: auto;
+  margin-bottom: 1em;
+}
+
+.citation-box code {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #333;
 }
 </style>
