@@ -1,0 +1,10 @@
+*__pycache__
+*.egg-info
+*.ckpt
+*.safetensors
+*.so
+.vscode
+models/PAI
+models/lightning_logs
+wandb
+results

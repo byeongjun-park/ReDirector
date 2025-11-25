@@ -1,0 +1,48 @@
+# general setting
+dataset_path: /data/user/brian/MultiCamVideo
+blip_path: Salesforce/blip2-opt-2.7b
+model_path: PAI/Wan2.1-Fun-V1.1-1.3B-Control-Camera
+output_path: models
+dataloader_num_workers: 4
+
+wandb:
+  disabled: False
+  project_name: ReDirector
+  wandb_api_key: # TODO: use your private key.
+
+extract:  # for extract_features.py
+  batch_size: 1
+  num_frames: 81
+  reverse: false
+  height: 480
+  width: 832
+
+train:  # for train.py
+  batch_size: 1
+  steps_per_epoch: 1000
+  max_epochs: 20
+  lr: 1e-4
+  max_timestep_boundary: 1
+  min_timestep_boundary: 0
+
+eval:  # for eval.py
+  ckpt_path: models/checkpoints/step20000.safetensors
+  video_path: example_data/bear # Or, you can directly use a .mp4 file.
+  negative_prompt: 色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走
+  camera_path: dataset/camera_extrinsics.json
+  cam_type: 1
+  cam_speed: 1
+  height: 480
+  width: 832
+  cfg_scale: 5.0
+  output_dir: results
+
+defaults:
+  - _self_
+  - override hydra/job_logging: disabled
+  - override hydra/hydra_logging: disabled
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null
