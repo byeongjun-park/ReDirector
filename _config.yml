@@ -18,7 +18,7 @@ email: 'byeongjun.prk@gmail.com'
 description: "Video-to-Video Generative Model"
 baseurl: "/ReDirector" # the subpath of your site, e.g. /blog
 url: "https://byeongjun-park.github.io" # the base hostname & protocol for your site, e.g. https://example.com
-paper: 'https://arxiv.org/abs/2503.12024'
+paper: 'http://arxiv.org/abs/2511.19827'
 github_username: 'https://github.com/byeongjun-park/ReDirector'
 
 # Build settings
