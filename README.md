@@ -6,13 +6,13 @@
 <a href="https://byeongjun-park.github.io/ReDirector/"><img src="https://img.shields.io/badge/Project%20Page-online-brightgreen"></a>
 
 <p align="center">
-  <img src="asset/teaser_comparison1.gif" width="49.5%"/>
-  <img src="asset/teaser_comparison2.gif" width="49.5%"/>
+  <img src="asset/teaser_comparison1.gif" width="49%"/>
+  <img src="asset/teaser_comparison2.gif" width="49%"/>
 </p>
 <p align="center">
-  <img src="asset/example1.gif" width="33%" />
-  <img src="asset/example2.gif" width="33%" />
-  <img src="asset/example3.gif" width="33%" />
+  <img src="asset/example1.gif" width="32.5%" />
+  <img src="asset/example2.gif" width="32.5%" />
+  <img src="asset/example3.gif" width="32.5%" />
 </p>
 
 This repository contains the official implementation of "ReDirector: Creating Any-Length Video Retakes with Rotary Camera Encoding", including both training and inference code.
