@@ -72,5 +72,10 @@ This repository contains the official implementation of "ReDirector: Creating An
 ## Citation
 If you find this repository helpful for your project, please consider citing our work. :)
 ```
-
+@article{park2025redirector,
+  title={ReDirector: Creating Any-Length Video Retakes with Rotary Camera Encoding},
+  author={Park, Byeongjun and Kim, Byung-Hoon and Chung, Hyungjin and Ye, Jong Chul},
+  journal={arXiv preprint arXiv:2511.19827},
+  year={2025}
+}
 ```
