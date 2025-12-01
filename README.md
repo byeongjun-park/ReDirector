@@ -4,6 +4,7 @@
 
 <a href="https://arxiv.org/abs/2511.19827"><img src="https://img.shields.io/badge/arXiv-2511.19827-b31b1b.svg"></a>
 <a href="https://byeongjun-park.github.io/ReDirector/"><img src="https://img.shields.io/badge/Project%20Page-online-brightgreen"></a>
+<a href="https://huggingface.co/byeongjun-park/ReDirector"><img src="https://img.shields.io/badge/huggingface-model-blue"></a>
 
 <p align="center">
   <img src="asset/teaser_comparison1.gif" width="49%"/>
@@ -21,19 +22,23 @@ This repository contains the official implementation of "ReDirector: Creating An
 
 
 ## Setup
-- Step 1: Install conda envs and download checkpoints:
+- Step 1: Install conda envs 
     ```shell
     conda env create -f environment.yml
     conda activate redirector
     pip install -r requirements.txt
     pip install --no-build-isolation git+https://github.com/mohammadasim98/met3r
     pip install --no-build-isolation -e vipe
+    ```
+
+- Step 2: Download checkpoints (Or, you can manually download from [Wan Checkpoints](https://modelscope.cn/models/PAI/Wan2.1-Fun-V1.1-1.3B-Control/files) and [ReDirector Checkpoints](https://huggingface.co/byeongjun-park/ReDirector/blob/main/step20000.safetensors), and place them in `models` folder.):
+    ```shell
     python preprocess/download_model.py
     ```
 
-- Step 2: Prepare the training dataset [MultiCamVideo dataset](https://huggingface.co/datasets/KwaiVGI/MultiCamVideo-Dataset).
+- Step 3: Prepare the training dataset [MultiCamVideo dataset](https://huggingface.co/datasets/KwaiVGI/MultiCamVideo-Dataset).
 
-- Step 3: Extract features for the faster training:
+- Step 4: Extract features for the faster training:
     ```shell
     torchrun --nproc-per-node=8 preprocess/extract_features.py dataset_path=<path/to/dataset> exract.reverse=true
     torchrun --nproc-per-node=8 preprocess/extract_features.py dataset_path=<path/to/dataset> exract.reverse=false
